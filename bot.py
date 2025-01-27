@@ -1,10 +1,10 @@
 from pymongo import MongoClient
 
 # Connect to the MongoDB server
-client = MongoClient("mongodb+srv://yaemiko:yaemiko69@cluster0.ojfsgey.mongodb.net/?retryWrites=true&w=majority")  # Update with your connection string if necessary
+client = MongoClient("mongodb+srv://safwandigi:Fazal2002@test.kzjdjnu.mongodb.net/?retryWrites=true&w=majority&appName=test")  # Update with your connection string if necessary
 
 # Specify the database name
-db_name = "Cluster0"  # Replace with your database name
+db_name = "test"  # Replace with your database name
 db = client[db_name]
 
 # List all collections in the database
