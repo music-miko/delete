@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
 # Connect to the MongoDB server
-client = MongoClient("mongodb+srv://abdulrahaman001:databaseKomi@komi.mosqcfj.mongodb.net/?retryWrites=true&w=majority&appName=KOmi" #pdate with your connection string if necessary
+client = MongoClient("mongodb+srv://abdulrahaman001:databaseKomi@komi.mosqcfj.mongodb.net/?retryWrites=true&w=majority&appName=KOmi") #pdate with your connection string if necessary
 
 # Specify the database name
 db_name = "KOmi"  # Replace with your database name
