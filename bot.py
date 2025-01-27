@@ -15,3 +15,5 @@ collection = db[collection_name]
 result = collection.delete_many({})
 
 print(f"Deleted {result.deleted_count} documents from the collection '{collection_name}'.")
+
+client.close()
