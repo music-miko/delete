@@ -3,7 +3,7 @@ from pymongo import MongoClient
 # Connect to the MongoDB server
 client = MongoClient("mongodb+srv://karan69:karan69@cluster0.gfw7e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0") 
 # Specify the database name
-db_name = "Cluster0"  # Replace with your database name
+db_name = "Curse"  # Replace with your database name
 db = client[db_name]
 
 # List all collections in the database
