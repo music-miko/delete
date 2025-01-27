@@ -1,7 +1,9 @@
 import psycopg2
 
 # Replace with your CockroachDB connection string
-DATABASE_URL = "postgresql://ghost:sQ1ZMBNvaoAv9H92ViPpOA@thorn-octopus-5107.j77.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"
+DATABASE_URL = "postgresql://ghost:sQ1ZMBNvaoAv9H92ViPpOA@thorn-octopus-5107.j77.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=/home/ubuntu/.postgresql/root.crt"
+
+cursor = None  # Ensure cursor is defined before the try block
 
 try:
     # Connect to the CockroachDB database
@@ -30,7 +32,7 @@ except Exception as e:
     print("An error occurred:", e)
 
 finally:
-    # Close the connection
+    # Ensure cursor and connection are closed properly
     if cursor:
         cursor.close()
     if connection:
