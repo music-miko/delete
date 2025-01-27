@@ -1,19 +1,25 @@
 from pymongo import MongoClient
 
 # Connect to the MongoDB server
-client = MongoClient("mongodb+srv://karan69:karan69@cluster0.gfw7e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  # Update with your connection string if needed
+client = MongoClient("mongodb+srv://karan69:karan69@cluster0.gfw7e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  # Update with your connection string if necessary
 
-# Specify the database and collection name
+# Specify the database name
 db_name = "cluster0"  # Replace with your database name
-collection_name = "Curse"  # Replace with your collection name
-
-# Access the database and collection
 db = client[db_name]
-collection = db[collection_name]
 
-# Delete all documents in the collection
-result = collection.delete_many({})
+# List all collections in the database
+collections = db.list_collection_names()
 
-print(f"Deleted {result.deleted_count} documents from the collection '{collection_name}'.")
+# Loop through each collection and drop it
+for collection_name in collections:
+    db[collection_name].drop()
+    print(f"Collection '{collection_name}' has been deleted.")
 
+# Confirm the operation
+if not db.list_collection_names():
+    print(f"All collections in the database '{db_name}' have been deleted.")
+else:
+    print(f"Some collections could not be deleted.")
+
+# Close the connection
 client.close()
