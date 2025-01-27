@@ -4,6 +4,7 @@ import psycopg2
 DATABASE_URL = "postgresql://ghost:sQ1ZMBNvaoAv9H92ViPpOA@thorn-octopus-5107.j77.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=/home/ubuntu/.postgresql/root.crt"
 
 cursor = None  # Ensure cursor is defined before the try block
+connection = None
 
 try:
     # Connect to the CockroachDB database
